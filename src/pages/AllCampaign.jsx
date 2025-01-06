@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaListUl } from "react-icons/fa";
 import { IoGridOutline } from "react-icons/io5";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CampaignCard from "../components/CampaignCard";
+import loadingGif from '../assets/loading.gif';
 
 const AllCampaign = () => {
 
-    const campaigns = useLoaderData()
+    const [campaigns, setCampaigns] = useState([])
     const [grid, setGrid] = useState(false)
-    console.log(grid);
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        fetch('https://a10-fund-spring-server.vercel.app/campaigns')
+            .then(res => res.json())
+            .then(data => {
+                setCampaigns(data)
+                setLoading(false)
+            })
+    }, [])
+
+
+    if (loading) {
+        return <>
+            <div className="min-h-screen flex justify-center items-center">
+                <div className="w-[300px]">
+                    <img className="w-full" src={loadingGif} alt="" />
+                </div>
+            </div>
+        </>
+    }
+
 
 
     return (

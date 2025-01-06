@@ -3,11 +3,12 @@ import { authContext } from "../AuthProvider/AuthProvider";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import loadingGif from '../assets/loading.gif';
 
 const MyCampaign = () => {
     const { user } = useContext(authContext)
-
     const [camps, setCamps] = useState(null)
+    const [loading, setLoading] = useState(true)
 
 
     useEffect(() => {
@@ -17,6 +18,7 @@ const MyCampaign = () => {
                 .then(data => {
                     if (data) {
                         setCamps(data);
+                        setLoading(false)
                     }
                 })
         }
@@ -56,6 +58,16 @@ const MyCampaign = () => {
             });
     }
 
+
+    if (loading) {
+        return <>
+            <div className="min-h-screen flex justify-center items-center">
+                <div className="w-[300px]">
+                    <img className="w-full" src={loadingGif} alt="" />
+                </div>
+            </div>
+        </>
+    }
 
     return (
         <div className="w-full md:w-10/12 mx-auto my-16 px-4 min-h-[60vh]">

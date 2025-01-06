@@ -33,7 +33,6 @@ const router =
                 {
                     path: "/campaigns",
                     element: <AllCampaign></AllCampaign>,
-                    loader: () => fetch('https://a10-fund-spring-server.vercel.app/campaigns')
                 },
                 {
                     path: '/campaign/:id',
