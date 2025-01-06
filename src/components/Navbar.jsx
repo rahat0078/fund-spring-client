@@ -30,35 +30,11 @@ const Navbar = () => {
             }>
             All Campaign
         </NavLink>
-        <NavLink to="/addCampaign"
-            className={({ isActive }) =>
-                isActive
-                    ? "text-[#28A745] text-lg font-semibold   p-2 rounded"
-                    : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
-            }>
-            Create Campaign
-        </NavLink>
-        <NavLink to="myCampaign"
-            className={({ isActive }) =>
-                isActive
-                    ? "text-[#28A745] text-lg font-semibold   p-2 rounded"
-                    : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
-            }>
-            My Campaign
-        </NavLink>
-        <NavLink to="/myDonations"
-            className={({ isActive }) =>
-                isActive
-                    ? "text-[#28A745] text-lg font-semibold  border-[#28A745] p-2 rounded"
-                    : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
-            }>
-            My Donations
-        </NavLink>
     </>;
 
     return (
-        <div className="bg-base-100 sticky top-0 z-50">
-            <div className="navbar container mx-auto py-4">
+        <div className={`sticky top-0 z-50 ${theme === "light" ? "bg-[#FFFBF8]" : "bg-[#373B40]"}`}>
+            <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,12 +48,12 @@ const Navbar = () => {
                     </div>
                     <Link to="/" className="cursor-pointer flex items-center gap-2 p-2 rounded border">
                         <img className="sm:w-8 w-6 h-full" src={logo} alt="" />
-                        <a className="md:text-xl text-[16px]">FundSpring</a>
+                        <p className="md:text-xl text-[16px]">FundSpring</p>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul
-                        className={`menu menu-horizontal px-1 gap-1 items-center ${theme === "dark" ? "text-white" : ""}`}>
+                        className={`menu menu-horizontal items-center ${theme === "dark" ? "text-white" : ""}`}>
                         {links}
                     </ul>
                 </div>
@@ -120,21 +96,43 @@ const Navbar = () => {
                     </button>
                     {
                         user?.email ?
-                            <div className="dropdown dropdown-end group">
-                                <div tabIndex={0} role="button" className="btn w-14 btn-ghost btn-circle avatar">
-                                    <div className="w-full rounded-full">
-                                        <img
-                                            alt="User Profile"
-                                            src={user?.photoURL}
-                                        />
-                                    </div>
+                            <div className="dropdown dropdown-bottom dropdown-end">
+                                <div tabIndex={0} role="button" className="m-1 rounded-full w-14">
+                                    <img className="rounded-full w-14 h-14" src={user?.photoURL} alt="User Profile" />
                                 </div>
-                                <div
-                                    tabIndex={0}
-                                    className="menu menu-sm dropdown-content bg-base-100 p-4 rounded-lg z-[1] mt-3 w-52 shadow-xl border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                                    <p className="text-xl font-semibold text-orange-500 mb-4">{user?.displayName}</p>
-                                    <button onClick={handleLogout} className="btn bg-[#28A745] hover:bg-[#37b855] text-white w-full">Logout</button>
-                                </div>
+                                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                    <p className="text-lg text-center text-[#28A745] font-semibold mb-4">{user?.displayName}</p>
+                                    <NavLink to="/addCampaign"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-[#28A745] text-lg font-semibold   p-2 rounded"
+                                                : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
+                                        }>
+                                        Add Campaign
+                                    </NavLink>
+
+                                    <NavLink to="myCampaign"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-[#28A745] text-lg font-semibold   p-2 rounded"
+                                                : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
+                                        }>
+                                        My Campaign
+                                    </NavLink>
+
+
+                                    <NavLink to="/myDonations"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "text-[#28A745] text-lg font-semibold  border-[#28A745] p-2 rounded"
+                                                : "p-2  text-lg font-semibold hover:text-[#28A745] hover:underline"
+                                        }>
+                                        My Donations
+                                    </NavLink>
+
+                                    <li><button onClick={handleLogout} className="btn btn-outline border-[#37b855] hover:border-[#37b855] btn-sm hover:bg-[#37b855] w-full">Logout</button></li>
+
+                                </ul>
                             </div>
                             :
                             <>

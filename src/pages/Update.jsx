@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import background1 from '../assets/10.png';
 import { authContext } from '../AuthProvider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Update = () => {
@@ -9,7 +9,8 @@ const Update = () => {
 
     const data = useLoaderData()
     // console.log(data);
-    const { type, title, image, description, amount, deadline, _id } = data
+    const { type, title, image, description, amount, deadline, _id } = data;
+    const navigate = useNavigate()
 
 
 
@@ -47,6 +48,18 @@ const Update = () => {
                         confirmButtonText: 'Done',
                         confirmButtonColor: '#28A745',
                     })
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Updated successfully',
+                        icon: 'success',
+                        confirmButtonColor: '#28A745',
+                        confirmButtonText: 'Done',
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            navigate('/myCampaign')
+                        }
+                      });
+                    
                 }
             })
     }

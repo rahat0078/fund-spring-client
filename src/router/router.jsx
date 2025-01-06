@@ -15,11 +15,11 @@ import Update from "../pages/Update";
 // import { useContext } from "react";
 // import { authContext } from "../AuthProvider/AuthProvider";
 
-const router = 
+const router =
 
     // const {user} = useContext(authContext)
 
-     createBrowserRouter([
+    createBrowserRouter([
         {
             path: "/",
             element: <App></App>,
@@ -37,9 +37,7 @@ const router =
                 },
                 {
                     path: '/campaign/:id',
-                    element: <PrivateRoute>
-                        <CampaignDetails></CampaignDetails>
-                    </PrivateRoute>,
+                    element: <CampaignDetails></CampaignDetails>,
                     loader: ({ params }) => fetch(`https://a10-fund-spring-server.vercel.app/campaigns/${params.id}`)
                 },
                 {

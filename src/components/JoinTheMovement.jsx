@@ -14,7 +14,7 @@ const JoinTheMovement = () => {
             }>
                 <div className="container mx-auto text-center text-white">
                     <div className="mb-12">
-                        <h2 className="text-5xl font-bold">Join the Movement</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold">Join the Movement</h2>
                         <p className="w-full md:w-2/3 mx-auto text-lg mt-4 text-gray-300">
                             Every effort counts. Join our community and help create a better future. Your contribution, no matter how small, can create a huge impact.
                         </p>

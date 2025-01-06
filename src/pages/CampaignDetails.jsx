@@ -10,8 +10,8 @@ const CampaignDetails = () => {
 
 
 
-    const donatedUserEmail = user.email;
-    const donatedUserName = user.displayName;
+    const donatedUserEmail = user?.email;
+    const donatedUserName = user?.displayName;
 
 
     const campaign = useLoaderData();
