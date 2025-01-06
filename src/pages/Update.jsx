@@ -30,7 +30,7 @@ const Update = () => {
 
         const data = { image, title, type, description, amount, deadline, email, userName }
 
-        fetch(`http://localhost:5000/campaign/${_id}`, {
+        fetch(`https://a10-fund-spring-server.vercel.app/campaign/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type' : 'application/json'

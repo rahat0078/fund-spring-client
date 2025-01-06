@@ -15,7 +15,7 @@ const AllCampaign = () => {
     console.log(sort);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/campaigns?sort=${sort}`)
+        fetch(`https://a10-fund-spring-server.vercel.app/campaigns?sort=${sort}`)
             .then(res => res.json())
             .then(data => {
                 setCampaigns(data)

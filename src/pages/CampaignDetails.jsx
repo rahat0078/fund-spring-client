@@ -1,13 +1,14 @@
-import { useContext,  } from "react";
+import { useContext, useState, } from "react";
 import { BiDonateHeart } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import { authContext } from "../AuthProvider/AuthProvider";
 
 const CampaignDetails = () => {
     const { user } = useContext(authContext)
 
+    const [redirect, setRedirect] = useState(false)
 
 
     const donatedUserEmail = user?.email;
@@ -23,41 +24,54 @@ const CampaignDetails = () => {
     const currentDate = new Date();
 
 
+    const location = useLocation()
+
+
+
 
 
 
     const handleDonate = () => {
-        if (currentDate > deadlineDate) {
-            // setIsExpired(true);
-            Swal.fire({
-                title: "Campaign Expired",
-                text: "Sorry, this campaign's deadline has passed. You cannot donate anymore.",
-                icon: "error",
-                confirmButtonText: "Close",
-                confirmButtonColor: "#FF6347"
-            });
-            return
-        }
+        if (user?.email) {
+            if (currentDate > deadlineDate) {
+                // setIsExpired(true);
+                Swal.fire({
+                    title: "Campaign Expired",
+                    text: "Sorry, this campaign's deadline has passed. You cannot donate anymore.",
+                    icon: "error",
+                    confirmButtonText: "Close",
+                    confirmButtonColor: "#FF6347"
+                });
+                return
+            }
 
-        fetch('http://localhost:5000/myDonations', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(myDonation)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Donation Successful",
-                        icon: "success",
-                        confirmButtonText: 'Done',
-                        confirmButtonColor: "#28A745",
-                    });
-                }
+            fetch('https://a10-fund-spring-server.vercel.app/myDonations', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(myDonation)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Donation Successful",
+                            icon: "success",
+                            confirmButtonText: 'Done',
+                            confirmButtonColor: "#28A745",
+                        });
+                    }
+                })
+        }
+        else {
+            setRedirect(true); 
+        }
+    }
+
+    if (redirect) {
+        return <Navigate to="/auth" state={{ from: location.pathname }} />;
     }
 
 

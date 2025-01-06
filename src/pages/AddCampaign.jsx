@@ -26,8 +26,8 @@ const AddCampaign = () => {
 
         const newCampaign = { image, title, type, description, amount, deadline, email, userName }
 
-        // fetch('http://localhost:5000/campaigns', {
-        fetch('http://localhost:5000/campaigns', {
+        // fetch('https://a10-fund-spring-server.vercel.app/campaigns', {
+        fetch('https://a10-fund-spring-server.vercel.app/campaigns', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

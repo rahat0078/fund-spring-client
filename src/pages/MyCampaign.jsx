@@ -13,7 +13,7 @@ const MyCampaign = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/myCampaigns?email=${user.email}`)
+            fetch(`https://a10-fund-spring-server.vercel.app/myCampaigns?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
@@ -22,7 +22,7 @@ const MyCampaign = () => {
                     }
                 })
         }
-    }, [setCamps, user.email]);
+    }, [setCamps, user?.email]);
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -36,7 +36,7 @@ const MyCampaign = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/campaign/${id}`, {
+                    fetch(`https://a10-fund-spring-server.vercel.app/campaign/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
