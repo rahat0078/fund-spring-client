@@ -10,7 +10,7 @@ const Footer = () => {
                     <img className="w-16" src={logo} alt="" />
                     <p className="text-2xl pt-2 font-bold"><span className="text-[#06A044]">Fund</span><span className="text-[#FF0050]">Spring</span></p>
                 </div>
-                <div className="flex flex-col md:flex-row justify-center gap-[40px] md:gap-[250px] lg:gap-[350px] my-6 md:my-8 lg:my-10">
+                <div className="flex flex-col md:flex-row justify-center md:ml-0 ml-14 gap-[40px] md:gap-[250px] lg:gap-[350px] my-6 md:my-8 lg:my-10">
                     <nav className="flex flex-col ">
                         <Link to="/" className="link">Home</Link>
                         <Link to="/campaigns" className="link">Allcampaigns</Link>

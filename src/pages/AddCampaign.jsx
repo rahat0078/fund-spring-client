@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import background1 from '../assets/10.png';
 import { authContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -27,8 +26,8 @@ const AddCampaign = () => {
 
         const newCampaign = { image, title, type, description, amount, deadline, email, userName }
 
-        // fetch('https://a10-fund-spring-server.vercel.app/campaigns', {
-        fetch('https://a10-fund-spring-server.vercel.app/campaigns', {
+        // fetch('http://localhost:5000/campaigns', {
+        fetch('http://localhost:5000/campaigns', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -55,7 +54,7 @@ const AddCampaign = () => {
     }
 
     return (
-        <div className="py-12" style={{ backgroundImage: `url(${background1})` }}>
+        <div className="py-12">
             <div className="max-w-lg mx-auto p-6 bg-transparent shadow-2xl border-y-4 border-y-[#28a7469d] rounded-lg py-12">
                 <h2 className="text-3xl text-[#FD7E14] pb-2 rounded-2xl border-b-2 border-b-[#fd7d146f] font-bold mb-6 text-center">Create a New Campaign</h2>
                 <form onSubmit={handleAddCampaign} className="space-y-4">

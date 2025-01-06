@@ -10,15 +10,18 @@ const AllCampaign = () => {
     const [campaigns, setCampaigns] = useState([])
     const [grid, setGrid] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [sort, setSort] = useState('Default')
+
+    console.log(sort);
 
     useEffect(() => {
-        fetch('https://a10-fund-spring-server.vercel.app/campaigns')
+        fetch(`http://localhost:5000/campaigns?sort=${sort}`)
             .then(res => res.json())
             .then(data => {
                 setCampaigns(data)
                 setLoading(false)
             })
-    }, [])
+    }, [sort])
 
 
     if (loading) {
@@ -37,11 +40,19 @@ const AllCampaign = () => {
         <div className="w-full md:w-10/12 mx-auto my-16 px-4">
             <h2 className="text-2xl md:text-4xl font-semibold text-center pb-12">Explore All Campaigns: <span className="text-[#FD7E14]">Your Support Matters</span>
             </h2>
-            <div className="max-w-4xl w-full mx-auto">
-                <div>
+            <div className="max-w-6xl w-full mx-auto flex justify-end">
+                <div className="flex gap-6">
+                    <div className="flex items-center gap-2"> 
+                        <p className="text-gray-500 font-semibold">Sort by min amount</p>
+                        <select onChange={e => setSort(e.target.value)} placeholder="Filter" className="select select-bordered max-w-36">
+                            <option>Default</option>
+                            <option>Low to High</option>
+                            <option>High to Low</option>
+                        </select>
+                    </div>
                     <button
                         onClick={() => setGrid((prev) => !prev)}
-                        className="border p-2 rounded text-xl"
+                        className="border px-3 py-2 rounded text-xl"
                     >
                         {grid ? <IoGridOutline /> : <FaListUl />}
                     </button>
@@ -53,7 +64,7 @@ const AllCampaign = () => {
 
                 {
                     grid ?
-                        <div className="overflow-x-auto max-w-4xl w-full mx-auto">
+                        <div className="overflow-x-auto max-w-6xl w-full mx-auto">
                             <table className="table table-zebra">
                                 <thead>
                                     <tr>

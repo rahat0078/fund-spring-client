@@ -12,7 +12,7 @@ const MyDonations = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`https://a10-fund-spring-server.vercel.app/myDonations?email=${user.email}`)
+            fetch(`http://localhost:5000/myDonations?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data) {

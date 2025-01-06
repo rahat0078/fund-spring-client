@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import background1 from '../assets/10.png';
 import { authContext } from '../AuthProvider/AuthProvider';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -31,7 +30,7 @@ const Update = () => {
 
         const data = { image, title, type, description, amount, deadline, email, userName }
 
-        fetch(`https://a10-fund-spring-server.vercel.app/campaign/${_id}`, {
+        fetch(`http://localhost:5000/campaign/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type' : 'application/json'
@@ -66,7 +65,7 @@ const Update = () => {
 
 
     return (
-        <div className="py-12" style={{ backgroundImage: `url(${background1})` }}>
+        <div className="py-12">
             <div className="max-w-lg mx-auto p-6 bg-transparent shadow-2xl border-y-4 border-y-[#28a7469d] rounded-lg py-12">
                 <h2 className="text-3xl text-[#FD7E14] pb-2 rounded-2xl border-b-2 border-b-[#fd7d146f] font-bold mb-6 text-center">Update Your Campaign</h2>
                 <form onSubmit={handleUpdate} className="space-y-4">

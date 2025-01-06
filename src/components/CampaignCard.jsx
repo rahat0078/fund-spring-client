@@ -6,14 +6,16 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 const CampaignCard = ({ campaign }) => {
-    const { image, title, description, deadline, _id } = campaign;
+    const { image, title, description, deadline, _id, amount } = campaign;
+
 
 
     return (
         <div data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="500">
             <div className="border rounded-xl bg-[#fdeadb1f] h-full flex flex-col">
-                <div className="lg:h-[300px] h-[250px] p-4">
+                <div className="lg:h-[300px] h-[250px] p-4 relative">
                     <img className="w-full h-full rounded-xl" src={image} alt="" />
+                    <p className="px-3 py-1 rounded-lg skew-x-6 bg-orange-500 rotate-12 hover:scale-105 transition duration-300 ease-in-out absolute right-9 bottom-10 text-white">min <br /> ${amount}</p>
                 </div>
                 <div className="px-4 flex flex-col justify-between flex-1">
                     <div className="space-y-1">

@@ -19,6 +19,7 @@ const router =
 
     // const {user} = useContext(authContext)
 
+
     createBrowserRouter([
         {
             path: "/",
@@ -28,7 +29,7 @@ const router =
                 {
                     path: "/",
                     element: <Home></Home>,
-                    loader: () => fetch('https://a10-fund-spring-server.vercel.app/homeCampaigns')
+                    loader: () => fetch('http://localhost:5000/homeCampaigns')
                 },
                 {
                     path: "/campaigns",
@@ -37,7 +38,7 @@ const router =
                 {
                     path: '/campaign/:id',
                     element: <CampaignDetails></CampaignDetails>,
-                    loader: ({ params }) => fetch(`https://a10-fund-spring-server.vercel.app/campaigns/${params.id}`)
+                    loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`)
                 },
                 {
                     path: "/addCampaign",
@@ -56,7 +57,7 @@ const router =
                     element: <PrivateRoute>
                         <Update></Update>
                     </PrivateRoute>,
-                    loader: ({ params }) => fetch(`https://a10-fund-spring-server.vercel.app/campaigns/${params.id}`)
+                    loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`)
                 },
                 {
                     path: "/myDonations",
