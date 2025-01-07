@@ -66,7 +66,7 @@ const CampaignDetails = () => {
                 })
         }
         else {
-            setRedirect(true); 
+            setRedirect(true);
         }
     }
 
@@ -76,34 +76,29 @@ const CampaignDetails = () => {
 
 
     return (
-        <div className="w-full md:w-10/12 mx-auto px-4 mb-16 mt-6">
-            <div className="md:p-6 md:w-4/5 w-full mx-auto p-3 border rounded-xl bg-[#fdeadb2f]">
-                <div className="mb-8 ml-2">
-                    <p className="text-3xl md:text-5xl font-semibold pb-3">{title}</p>
-                    <p className="text-xl text-gray-500">{description}</p>
-                </div>
-                <div className="h-auto mb-6 md:mb-8">
-                    <img className="w-full h-full rounded-xl" src={image} alt="" />
-                </div>
-                <div className="ml-2">
-                    <p className="text-xl font-semibold flex items-center gap-3"><CgProfile className="text-3xl" />
-                        {userName} is organizing this fundraiser.
-                    </p>
-                    <p className="text-gray-500 text-lg py-4">Email: {email}</p>
-
-
-                    <p className="flex items-center text-xl font-semibold">Minimum amount : {amount}$</p>
-
-                    <div className="flex flex-wrap gap-3 sm:gap-8 py-4">
-                        <p className="text-gray-500 text-lg">Deadline: {deadline}</p>
-                        <p className="text-gray-500 text-lg">Campaign Type: {type}</p>
+        <div className="bg-[#fdeadb19] py-16 px-4">
+            <div className="w-full md:w-10/12 mx-auto">
+                <div className="card lg:card-side md:flex-row bg-[#fdeadb2f] shadow-xl">
+                    <figure className="flex-1">
+                        <img className="w-full h-full" src={image} alt="" />
+                    </figure>
+                    <div className="card-body flex-1">
+                        <p className="text-3xl md:text-5xl font-semibold">{title}</p>
+                        <p className="text-gray-500">{description}</p>
+                        <p className="text-lg font-semibold flex items-center gap-3"><CgProfile className="text-xl" />
+                            {userName} is organizing this fundraiser.
+                        </p>
+                        <p className="flex items-center text-lg font-semibold">Minimum amount : {amount}$</p>
+                        <div className="flex flex-wrap gap-3 sm:gap-8">
+                            <p className="text-gray-500 text-lg">Deadline: {deadline}</p>
+                            <p className="text-gray-500 text-lg">Campaign Type: {type}</p>
+                        </div>
+                        <div className="card-actions justify-end">
+                            <button onClick={handleDonate} className="btn text-white rounded bg-[#FD7E14] hover:bg-[#FD7E14] text-lg mt-4">Donate <BiDonateHeart /></button>
+                        </div>
                     </div>
-                    <button onClick={handleDonate} className="btn text-white rounded bg-[#FD7E14] hover:bg-[#FD7E14] text-lg mt-4">Donate <BiDonateHeart /></button>
                 </div>
             </div>
-
-
-
         </div>
     );
 };

@@ -4,6 +4,8 @@ import { Typewriter } from "react-simple-typewriter";
 import CampaignCard from "../components/CampaignCard";
 import JoinTheMovement from "../components/JoinTheMovement";
 import RecentAct from "../components/RecentAct";
+import Stats from "../components/Stats";
+import Review from "../components/Review";
 
 
 
@@ -45,8 +47,11 @@ const Home = () => {
 
 
       <RecentAct></RecentAct>
+      
 
       <JoinTheMovement></JoinTheMovement>
+      <Stats/>
+      <Review/>
 
     </div>
   );
