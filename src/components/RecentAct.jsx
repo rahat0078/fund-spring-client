@@ -34,17 +34,17 @@ const RecentAct = () => {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-10">
                         <h2 className="md:text-4xl text-2xl font-bold mb-4">Recent Activities</h2>
-                        <p className="text-gray-500 dark:text-gray-300">Stay updated with the latest happenings and contributions.</p>
+                        <p className="text-gray-400 dark:text-gray-300">Stay updated with the latest happenings and contributions.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {
                             data.map((item, index) => 
-                                <div key={index} className="rounded-lg bg-[#fdeadb1f] shadow-2xl overflow-hidden">
+                                <div key={index} className="rounded-lg bg-[#fdeadb1f] shadow-xl overflow-hidden">
                                     <img className="w-full h-[275px] object-cover" src={item?.img} />
                                     <div className="p-6">
                                         <h3 className="text-2xl font-semibold mb-2">{item?.title}</h3>
                                         <h4 className="font-bold">{item?.subTitle}</h4>
-                                        <p className="text-gray-500 dark:text-gray-300 mb-4">
+                                        <p className="text-gray-400 dark:text-gray-300 mb-4">
                                         {item?.description}
                                         </p>
                                     </div>

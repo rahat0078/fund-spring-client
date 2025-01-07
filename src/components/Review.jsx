@@ -41,7 +41,7 @@ const Review = () => {
         <div className="my-16 container mx-auto px-4">
             <div className="text-center mb-10">
                 <h2 className="md:text-4xl text-2xl font-bold mb-4">What Our Supporters Say</h2>
-                <p className="text-gray-500 w-full max-w-4xl mx-auto text-content">
+                <p className="text-gray-400 w-full max-w-4xl mx-auto text-content">
                     Real stories from real people! Discover how our platform has helped bring dreams to life and made a difference. Your trust and feedback inspire us to grow stronger every day.
                 </p>
             </div>

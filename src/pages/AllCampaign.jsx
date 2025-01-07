@@ -43,7 +43,7 @@ const AllCampaign = () => {
             <div className="max-w-6xl w-full mx-auto flex justify-end">
                 <div className="flex gap-6">
                     <div className="flex items-center gap-2"> 
-                        <p className="text-gray-500 font-semibold">Sort by min amount</p>
+                        <p className="text-gray-400 font-semibold">Sort by min amount</p>
                         <select onChange={e => setSort(e.target.value)} placeholder="Filter" className="select select-bordered max-w-36">
                             <option>Default</option>
                             <option>Low to High</option>

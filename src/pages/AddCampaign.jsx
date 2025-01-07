@@ -107,7 +107,7 @@ const AddCampaign = () => {
 
 
                     <div>
-                        <label className="block font-medium mb-1">Minimum Donation Amount <span className='text-gray-500'>(USD$)</span></label>
+                        <label className="block font-medium mb-1">Minimum Donation Amount <span className='text-gray-400'>(USD$)</span></label>
                         <input
                             type="number"
                             name='amount'

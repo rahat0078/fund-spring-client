@@ -33,7 +33,7 @@ const Stats = () => {
 
         <div className={`py-16 text-center ${theme === "light" ? "bg-[#FFFBF8]" : "bg-[#373B40]"}`}>
             <h2 className="md:text-4xl text-2xl font-bold mb-4">Together, We’re Making a Difference</h2>
-            <p className="text-lg text-gray-500 mb-10">
+            <p className="text-lg text-gray-400 mb-10">
                 See how your support has contributed to real impact worldwide.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">

@@ -73,7 +73,7 @@ const MyCampaign = () => {
         <div className="w-full md:w-10/12 mx-auto my-16 px-4 min-h-[60vh]">
             <h2 className="text-2xl md:text-4xl font-semibold text-center">Your Campaigns at a Glance
             </h2>
-            <p className="text-lg text-gray-500 text-center pt-4 pb-12 md:w-2/3 mx-auto w-full">Discover and manage the campaigns you have created. Track progress, edit details, and see the impact your initiatives are making.</p>
+            <p className="text-lg text-gray-400 text-center pt-4 pb-12 md:w-2/3 mx-auto w-full">Discover and manage the campaigns you have created. Track progress, edit details, and see the impact your initiatives are making.</p>
 
             <div className="overflow-x-auto my-6">
                 <table className="table table-xs lg:table-zebra w-full max-w-4xl mx-auto">

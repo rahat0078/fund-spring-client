@@ -84,14 +84,14 @@ const CampaignDetails = () => {
                     </figure>
                     <div className="card-body flex-1">
                         <p className="text-3xl md:text-5xl font-semibold">{title}</p>
-                        <p className="text-gray-500">{description}</p>
+                        <p className="text-gray-400">{description}</p>
                         <p className="text-lg font-semibold flex items-center gap-3"><CgProfile className="text-xl" />
                             {userName} is organizing this fundraiser.
                         </p>
                         <p className="flex items-center text-lg font-semibold">Minimum amount : {amount}$</p>
                         <div className="flex flex-wrap gap-3 sm:gap-8">
-                            <p className="text-gray-500 text-lg">Deadline: {deadline}</p>
-                            <p className="text-gray-500 text-lg">Campaign Type: {type}</p>
+                            <p className="text-gray-400 text-lg">Deadline: {deadline}</p>
+                            <p className="text-gray-400 text-lg">Campaign Type: {type}</p>
                         </div>
                         <div className="card-actions justify-end">
                             <button onClick={handleDonate} className="btn text-white rounded bg-[#FD7E14] hover:bg-[#FD7E14] text-lg mt-4">Donate <BiDonateHeart /></button>

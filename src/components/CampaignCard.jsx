@@ -20,13 +20,13 @@ const CampaignCard = ({ campaign }) => {
                 <div className="px-4 flex flex-col justify-between flex-1">
                     <div className="space-y-1">
                         <h2 className="lg:text-2xl text-xl font-semibold">{title}</h2>
-                        <p className="text-gray-500">
+                        <p className="text-gray-400">
                             {description.slice(0, 50)}...
                             <Link to={`/campaign/${_id}`} className="link text-[#FD7E14]">
                                 SeeMore
                             </Link>
                         </p>
-                        <p className="flex gap-2 items-center text-gray-500">
+                        <p className="flex gap-2 items-center text-gray-400">
                             <span className="font-semibold text-lg">Deadline:</span>
                             <SlCalender className="text-xl" />
                             {deadline}
