@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
+import { FaLink } from 'react-icons/fa';
 
 
 const Blog = () => {
@@ -79,11 +80,15 @@ const Blog = () => {
                                         alt="Shoes"
                                     />
                                 </figure>
-                                <div className="card-body flex flex-col flex-grow">
+                                <div className="card-body flex-grow">
                                     <h2 className="card-title mt-6 px-4">{blog.blogTitle}</h2>
-                                    <p className="px-4 pb-6 flex-grow">{blog.description}</p>
+                                    <p className="px-4 pb-6">{blog.description}</p>
+                                </div>
+                                <div className="px-4">
+                                    <button className="btn btn-xs bg-[#f97316] hover:bg-[#f97316]">See more <FaLink /></button>
                                 </div>
                             </div>
+
 
                         </SwiperSlide>)
                 }
