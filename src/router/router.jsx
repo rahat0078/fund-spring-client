@@ -12,6 +12,8 @@ import PrivateRoute from "../Private/PrivateRoute";
 import Auth from "../components/Auth/Auth";
 import CampaignDetails from "../pages/CampaignDetails";
 import Update from "../pages/Update";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 // import { useContext } from "react";
 // import { authContext } from "../AuthProvider/AuthProvider";
 
@@ -39,6 +41,14 @@ const router =
                     path: '/campaign/:id',
                     element: <CampaignDetails></CampaignDetails>,
                     loader: ({ params }) => fetch(`https://a10-fund-spring-server.vercel.app/campaigns/${params.id}`)
+                },
+                {
+                    path: '/aboutUs',
+                    element: <AboutUs/>
+                },
+                {
+                    path: '/contactUs',
+                    element: <ContactUs/>
                 },
                 {
                     path: "/addCampaign",
