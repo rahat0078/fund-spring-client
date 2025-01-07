@@ -1,6 +1,8 @@
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdAttachEmail } from 'react-icons/md';
 
+// loading.gif
+
 const ContactUs = () => {
 
     const locations = [

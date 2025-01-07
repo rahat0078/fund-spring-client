@@ -28,7 +28,7 @@ const AllCampaign = () => {
         return <>
             <div className="min-h-screen flex justify-center items-center">
                 <div className="w-[300px]">
-                    <img className="w-full" src={loadingGif} alt="" />
+                    <img className="w-full bg-transparent" src={loadingGif} alt="" />
                 </div>
             </div>
         </>
