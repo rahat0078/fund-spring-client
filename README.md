@@ -42,7 +42,7 @@ Welcome to **FundSpring**, a platform designed to bring together people who want
 - **react-simple-typewriter**: ^5.0.1  
 - **react-slick**: ^0.30.2  
 
-### backend code: https://github.com/rahat0078/edu-linker-server-00
+#### backend code: https://github.com/rahat0078/edu-linker-server-00
 
 ## Contact:
 For any inquiries or suggestions, feel free to reach out at **rarahat1710@gamil.com**
